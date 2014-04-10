@@ -18,10 +18,14 @@ class Project {
 		name boost : 2.0 
 	}
 	
-    static constraints = {		name blank : false
+    static constraints = {
 		name blank : false
-		description blank : false
+		description : [blank : false, size : 1..5000]
     }
+	
+	static mapping = {
+		description sqlType : 'longtext';
+	}
 	
 	
 	public String toString() {
